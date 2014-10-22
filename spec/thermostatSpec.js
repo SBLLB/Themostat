@@ -31,6 +31,10 @@ describe('Thermostat', function () {
 			expect(thermostat.temperature).toEqual(15);
 		});
 
+		it('cannot go lower than 10 degrees', function(){
+			expect(function() {thermostat.decreaseTemperatureBy(11)}).toThrow(new Error('Temperature cannot be set below 10 degrees'));
+		});
+
 
 
 	});
