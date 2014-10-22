@@ -50,12 +50,6 @@ describe('Thermostat', function () {
 			expect(thermostat.temperature).toEqual(10);
 		});
 
-		// it('can be reset to 20 degrees', function() {
-		// 	thermostat.increaseTemperatureBy(5);
-		// 	thermostat.reset;
-		// 	expect(thermostat.temperature).toEqual(20);
-		// });
-
 		it('cannot go higher than the power saving mode maximum temperature', function() {
 			expect(function() {thermostat.increaseTemperatureBy(6)}).toThrow(new Error('This exceeds the set maximum temperature'));
 		});
@@ -97,6 +91,14 @@ describe('Thermostat', function () {
 				expect(thermostat.maximumTemperature).toEqual(25)
 			});
 
+		});
+
+		describe('a reset button', function(){
+			it('that sets the temperature back to 20 degrees', function(){
+				thermostat.increaseTemperatureByOne();
+				thermostat.resetTemperature();
+				expect(thermostat.temperature).toEqual(20);
+			});
 		});
 	});
 

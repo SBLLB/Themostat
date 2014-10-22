@@ -16,9 +16,9 @@ Thermostat.prototype.decreaseTemperatureBy = function(degrees) {
 		throw new Error("Temperature cannot be set below 10 degrees");
 };
 
-// Thermostat.prototype.reset = function() {
-// 	this.temperature = 20;
-// };
+Thermostat.prototype.resetTemperature = function() {
+	this.temperature = 20;
+};
 
 Thermostat.prototype.increaseTemperatureByOne = function() {
 	this.increaseTemperatureBy(1)
