@@ -22,9 +22,16 @@ describe('Thermostat', function () {
 	describe('temperature', function() {
 
 		it('can be increased by a number of degrees', function() {
-			thermostat.increaseTemperatureBy(5)
-			expect(thermostat.temperature).toEqual(25)
+			thermostat.increaseTemperatureBy(5);
+			expect(thermostat.temperature).toEqual(25);
 		});
+
+		it('can be decreased by a number of degrees', function() {
+			thermostat.decreaseTemperatureBy(5);
+			expect(thermostat.temperature).toEqual(15);
+		});
+
+
 
 	});
 
