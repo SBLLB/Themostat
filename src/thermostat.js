@@ -5,13 +5,15 @@ function Thermostat() {
 };
 
 Thermostat.prototype.increaseTemperatureBy = function(degrees) {
-	this.temperature += degrees
+	this.temperature += degrees;
+	if (this.temperature > this.maximumTemperature)  
+		throw new Error("This exceeds the set maximum temperature");
 };
 
 Thermostat.prototype.decreaseTemperatureBy = function(degrees) {
 	this.temperature -= degrees
-	if (this.temperature < 10)  this.temperature = 10
-	 // throw new Error("Temperature cannot be set below 10 degrees");
+	if (this.temperature < 10)  
+		throw new Error("Temperature cannot be set below 10 degrees");
 };
 
 // Thermostat.prototype.reset = function() {
