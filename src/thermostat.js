@@ -28,3 +28,7 @@ Thermostat.prototype.decreaseTemperatureByOne = function() {
 Thermostat.prototype.turnOffPowerSavingMode = function() {
 	this.isPowerSavingModeOn = false;
 };
+
+Thermostat.prototype.turnOnPowerSavingMode = function() {
+	this.isPowerSavingModeOn = true;
+};

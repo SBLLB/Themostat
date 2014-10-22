@@ -65,8 +65,9 @@ describe('Thermostat', function () {
 			expect(thermostat.isPowerSavingModeOn).toBe(false)
 		});
 
-		xit('a powersaving mode which can be turned back on', function() {
-
+		it('a powersaving mode which can be turned back on', function() {
+			thermostat.turnOnPowerSavingMode();
+			expect(thermostat.isPowerSavingModeOn).toBe(true)
 		});
 	});
 
