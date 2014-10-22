@@ -58,4 +58,16 @@ describe('Thermostat', function () {
 
 	});
 
+	describe('features includes', function() {
+
+		it('a powersaving mode which can be turned off', function() {
+			thermostat.turnOffPowerSavingMode();
+			expect(thermostat.isPowerSavingModeOn).toBe(false)
+		});
+
+		xit('a powersaving mode which can be turned back on', function() {
+
+		});
+	});
+
 });
