@@ -60,14 +60,33 @@ describe('Thermostat', function () {
 
 	describe('features includes', function() {
 
-		it('a powersaving mode which can be turned off', function() {
-			thermostat.turnOffPowerSavingMode();
-			expect(thermostat.isPowerSavingModeOn).toBe(false)
-		});
+		describe('a Power Saving Mode which', function(){
 
-		it('a powersaving mode which can be turned back on', function() {
-			thermostat.turnOnPowerSavingMode();
-			expect(thermostat.isPowerSavingModeOn).toBe(true)
+			it('can be turned off', function() {
+				thermostat.turnOffPowerSavingMode();
+				expect(thermostat.isPowerSavingModeOn).toBe(false)
+			});
+
+			it('can be turned back on', function() {
+				thermostat.turnOnPowerSavingMode();
+				expect(thermostat.isPowerSavingModeOn).toBe(true)
+			});
+
+			it('when on sets the max temperature to 25 degrees', function() {
+				expect(thermostat.maximumTemperature).toEqual(25)
+			});
+
+			it('when off sets the max temperature to 32 degrees', function() {
+				thermostat.turnOffPowerSavingMode();
+				expect(thermostat.maximumTemperature).toEqual(32)
+			});
+
+			it('when switched from off back to on reverts max temp to 25 degrees', function() {
+				thermostat.turnOffPowerSavingMode();
+				thermostat.turnOnPowerSavingMode();
+				expect(thermostat.maximumTemperature).toEqual(25)
+			});
+
 		});
 	});
 
