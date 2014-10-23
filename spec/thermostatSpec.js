@@ -62,9 +62,9 @@ describe('Thermostat', function () {
 
 	});
 
-	describe('features includes', function() {
+	describe('features includes a', function() {
 
-		describe('a Power Saving Mode which', function(){
+		describe('Power Saving Mode which', function(){
 
 			it('can be turned off', function() {
 				thermostat.turnOffPowerSavingMode();
@@ -93,12 +93,25 @@ describe('Thermostat', function () {
 
 		});
 
-		describe('a reset button', function(){
+		describe('reset button', function(){
 			it('that sets the temperature back to 20 degrees', function(){
 				thermostat.increaseTemperatureByOne();
 				thermostat.resetTemperature();
 				expect(thermostat.temperature).toEqual(20);
 			});
+		});
+
+		describe('responsive colour display', function() {
+		
+			it('that is green when temperature less than 18 degrees', function() {
+				thermostat.decreaseTemperatureBy(4);
+				expect(thermostat.displayColour).toEqual("green");
+			});
+
+			it('that is yellow when between 18 - 25 degrees', function() {
+				expect(thermostat.displayColour).toEqual("yellow");
+			});
+
 		});
 	});
 

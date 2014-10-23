@@ -2,6 +2,7 @@ function Thermostat() {
 	this.temperature = 20;
 	this.isPowerSavingModeOn = true;
 	this.maximumTemperature = 25; 
+	this.displayColour = "yellow";
 };
 
 Thermostat.prototype.increaseTemperatureBy = function(degrees) {
@@ -11,7 +12,8 @@ Thermostat.prototype.increaseTemperatureBy = function(degrees) {
 };
 
 Thermostat.prototype.decreaseTemperatureBy = function(degrees) {
-	this.temperature -= degrees
+	this.temperature -= degrees;
+	this.setDisplayColour();
 	if (this.temperature < 10)  
 		throw new Error("Temperature cannot be set below 10 degrees");
 };
@@ -37,3 +39,24 @@ Thermostat.prototype.turnOnPowerSavingMode = function() {
 	this.isPowerSavingModeOn = true;
 	this.maximumTemperature = 25;
 };
+
+
+
+
+Thermostat.prototype.setDisplayColour = function(){
+	console.log(this.temperature);
+	if (this.temperature < 18) {
+		this.displayColour = "green";
+	}
+	else if (this.temperature >= 18 && this.temperature < 25) {
+		this.displayColour = "yellow";
+	}
+	else{
+		this.displayColour = "blue";
+	}
+ };
+
+
+
+
+
