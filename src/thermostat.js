@@ -7,27 +7,30 @@ function Thermostat() {
 
 Thermostat.prototype.increaseTemperatureBy = function(degrees) {
 	this.temperature += degrees;
-	if (this.temperature > this.maximumTemperature)  
-		throw new Error("This exceeds the set maximum temperature");
+	this.setDisplayColour();
+	if (this.temperature >= this.maximumTemperature)  
+		return this.temperature = this.maximumTemperature
+	else return this.temperature
 };
 
 Thermostat.prototype.decreaseTemperatureBy = function(degrees) {
 	this.temperature -= degrees;
 	this.setDisplayColour();
 	if (this.temperature < 10)  
-		throw new Error("Temperature cannot be set below 10 degrees");
+		return this.temperature = 10
+	else return this.temperature
 };
 
 Thermostat.prototype.resetTemperature = function() {
-	this.temperature = 20;
+	return this.temperature = 20;
 };
 
 Thermostat.prototype.increaseTemperatureByOne = function() {
-	this.increaseTemperatureBy(1)
+	return this.increaseTemperatureBy(1)
 };
 
 Thermostat.prototype.decreaseTemperatureByOne = function() {
-	this.decreaseTemperatureBy(1)
+	return this.decreaseTemperatureBy(1)
 };
 
 Thermostat.prototype.turnOffPowerSavingMode = function() {

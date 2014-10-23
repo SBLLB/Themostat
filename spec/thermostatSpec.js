@@ -41,22 +41,20 @@ describe('Thermostat', function () {
 			expect(thermostat.temperature).toEqual(15);
 		});
 
-		it('cannot go lower than 10 degrees', function() {
-			expect(function() {thermostat.decreaseTemperatureBy(11)}).toThrow(new Error('Temperature cannot be set below 10 degrees'));
-		});
-
 		xit('sets to 10 degrees if user has decreased the temperature below minimum 10 deg threshold', function() {
 			thermostat.decreaseTemperatureBy(15);
 			expect(thermostat.temperature).toEqual(10);
 		});
 
 		it('cannot go higher than the power saving mode maximum temperature', function() {
-			expect(function() {thermostat.increaseTemperatureBy(6)}).toThrow(new Error('This exceeds the set maximum temperature'));
+			thermostat.increaseTemperatureBy(15);
+			expect(thermostat.temperature).toEqual(25);		
 		});
 
 		it("cannot go higher than the non-power saving mode maximum temperature", function() {
 			thermostat.turnOffPowerSavingMode();
-			expect(function() {thermostat.increaseTemperatureBy(13)}).toThrow(new Error('This exceeds the set maximum temperature'));
+			thermostat.increaseTemperatureBy(15);
+			expect(thermostat.temperature).toEqual(32);			
 		});
 
 
