@@ -36,14 +36,17 @@ Thermostat.prototype.decreaseTemperatureByOne = function() {
 Thermostat.prototype.turnOffPowerSavingMode = function() {
 	this.isPowerSavingModeOn = false;
 	this.maximumTemperature = 32;
+	return "Power Saving Mode Off";
 };
 
 Thermostat.prototype.turnOnPowerSavingMode = function() {
 	this.isPowerSavingModeOn = true;
 	this.maximumTemperature = 25;
+	if (this.temperature > this.maximumTemperature) {
+		this.temperature = this.maximumTemperature
+	}
+	return "Power Saving Mode On"
 };
-
-
 
 
 Thermostat.prototype.setDisplayColour = function(){
