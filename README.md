@@ -24,20 +24,22 @@ Write the logic for a heating controller and build a web interface for control.
 
 
 ### How To Use
-####Subtitle
 
+``` $ cd thermostat ```  
+``` $ open src/index.html ```
 
 ### Technologies Used
 * Javascript
 * jQuery
 * Json
-* Sinatra
+* Sinatra 
 * Weather API
-*
 
 
 ### To do 
-- [ ] CSS & HTML.  
+- [ ] CSS & HTML
+- [ ] Finish implementing Weather API framework 
+- [ ] Finish implementing Sinatra framework 
 - [ ] Deploy to Heroku?  
 
 
