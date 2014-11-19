@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Thermostat</title>
+		<link rel="stylesheet" href="stylesheet.css">
+	</head>
+
+	<body>
+		<section class="temperature">
+			<h1>Current Temperature Setting</h1>
+			<h2> Power Saving Mode Status</h2>
+			<nav>
+				<ul>
+					<li><a href="#" class="increase_temperature">+</a></li>  
+					<li><a href="#" class="decrease_temperature">-</a></li>
+					<li><a href="#" class="reset_temperature">Reset</a></li>
+					<li><a href="#" class="turn_power_saving_on">Turn 'Power Saving Mode' On</a></li>
+					<li><a href="#" class="turn_power_saving_off">Turn 'Power Saving Mode' Off</a></li>
+				</ul>
+			</nav>
+		</section>
+
+		<section >
+			<h1>Outside it is <span class="outsideTemp"></span> degrees</h1> 
+		</section>
+	
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"> </script>
+		<script src="thermostat.js"> </script>
+		<script src="interface.js" > </script>
+
+	</body>
+
+</html>

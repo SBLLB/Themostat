@@ -1,7 +1,12 @@
-Thermostat
-==========
+##Thermostat
 
-Specification:
+
+#### A heating controller written in Javascript and jQuery, tested in Jasmine. Incorporated use of a weather API also. This was a weekday project during Week 6 at Makers Academy.
+
+
+###The Objective
+
+Write the logic for a heating controller and build a web interface for control. 
 
 - Thermostat starts at 20 degrees
 - Power saving mode is on by default
@@ -12,8 +17,27 @@ Specification:
 - If power saving mode is on, the maximum temperature is 25 degrees
 - If power saving mode is off, the maximum temperature is 32 degrees
 - You can reset the temperature to 20 by hitting  the reset button
-
 - The thermostat should color the display based on energy usage
   - < 18 is green,
   - < 25 is yellow,
   - otherwise red
+
+
+### How To Use
+####Subtitle
+
+
+### Technologies Used
+* Javascript
+* jQuery
+* Json
+* Sinatra
+* Weather API
+*
+
+
+### To do 
+- [ ] CSS & HTML.  
+- [ ] Deploy to Heroku?  
+
+

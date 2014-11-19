@@ -41,7 +41,7 @@ describe('Thermostat', function () {
 			expect(thermostat.temperature).toEqual(15);
 		});
 
-		xit('sets to 10 degrees if user has decreased the temperature below minimum 10 deg threshold', function() {
+		it('sets to 10 degrees if user has decreased the temperature below minimum 10 deg threshold', function() {
 			thermostat.decreaseTemperatureBy(15);
 			expect(thermostat.temperature).toEqual(10);
 		});
@@ -56,8 +56,6 @@ describe('Thermostat', function () {
 			thermostat.increaseTemperatureBy(15);
 			expect(thermostat.temperature).toEqual(32);			
 		});
-
-
 	});
 
 	describe('features includes a', function() {

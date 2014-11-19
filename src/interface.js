@@ -5,7 +5,7 @@ $(document).ready(function() {
 	var thermostat = new Thermostat;
 	$('.temperature h1').text(thermostat.temperature);
 
-	$.get('http://www.myweather2.com/developer/forecast.ashx?uac=UuJ5tIZAKz&output=json&query=SW1', function(data) {
+	$.get('/weather', function(data) {
 		$('.outsideTemp').text(data['weather']['curren_weather'][0]['temp'])
 	});;
 
